@@ -76,5 +76,8 @@ heap_t *array_to_heap(int *array, size_t size);
 int heap_extract(heap_t **root);
 int *heap_to_sorted_array(heap_t *heap, size_t *size);
 avl_t *avl_insert(avl_t **tree, int value);
+bst_t *successor(bst_t *root);
+bst_t *_delete(bst_t *root, bst_t *node);
+bst_t *recursive(bst_t *root, bst_t *node, int value);
 
 #endif
