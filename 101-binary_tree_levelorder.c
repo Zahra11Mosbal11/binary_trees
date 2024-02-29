@@ -17,25 +17,25 @@ void binary_tree_levelorder(const binary_tree_t *tree, void (*func)(int))
 
 	height = binary_tree_height(tree);
 	for (count = 0; count <= height + 1; count++)
-		level(_tree, func, counter);
+		level(_tree, func, count);
 }
 /**
  *level - print the nodes by level
  *@func: pointer to a functionn
- *@level: the level
+ *@lev: the level
  *@node: pointer to the node
  *Return: nothing
  */
-void level(binary_tree_t *node, void (*func)(int), int level)
+void level(binary_tree_t *node, void (*func)(int), int lev)
 {
 	if (node != NULL && func != NULL)
 	{
-		if (level == 1)
+		if (lev == 1)
 			func(node->n);
-		if (level > 1)
+		if (lev > 1)
 		{
-			level(node->left, func, level - 1);
-			level(node->right, func, level - 1);
+			level(node->left, func, lev - 1);
+			level(node->right, func, lev - 1);
 		}
 	}
 }
